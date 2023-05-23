@@ -127,7 +127,8 @@ function generer(){
         password=""; // A NE PAS OUBLIER 
     } // Fin de la boucle while permettant de regénérer un mot de passe si un caractère souhaité n'est pas présent
     verif = 1;
-    
+    document.ajoutPWD.reset();
+
 
 }
 
@@ -149,3 +150,18 @@ function contient_chiffre(str) {
 }
 
 setInterval(incrementerDuree, 1000);
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('#addPWD').addEventListener('submit',function(e){
+        //vérifie si au moins une case du formulaire est cochée
+        if(document.querySelector('#minuscule').checked || document.querySelector('#majuscule').checked || document.querySelector('#chiffre').checked || document.querySelector('#symbole').checked){
+            alert("Veuillez sélectionner au moins un critère");
+            e.preventDefault();
+        }
+        else{
+            generer();
+        }
+        
+    });
+});
+    
