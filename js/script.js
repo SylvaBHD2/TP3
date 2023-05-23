@@ -117,3 +117,16 @@ function contient_carspecial(str) {
   }
  
 
+  functionincrementerDuree() 
+  {
+    letdurees=document.getElementsByClassName("duree")
+    if(durees.length!=0) 
+        {Array.prototype.forEach.call(durees, function(dureeElement) 
+            {
+                letvaleur=parseInt(dureeElement.textContent);dureeElement.textContent=valeur+1;
+            });
+        }
+        
+    setInterval(incrementerDuree, 1000);
+    }
+
