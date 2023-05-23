@@ -31,6 +31,28 @@ function bienvenu(){
 //     monTableau.appendChild(newLine);
     
 // }
+function incrementerDuree() 
+{
+let durees=document.getElementsByClassName("duree")
+if(durees.length!=0) 
+    {Array.prototype.forEach.call(durees, function(dureeElement) 
+        {
+            //si le mot de passe n'est pas expiré(60 seconds)
+            if(parseInt(dureeElement.textContent)<60){
+                let valeur=parseInt(dureeElement.textContent);dureeElement.textContent=valeur+1;
+            }
+            //sinon si égal à 60, grise la police
+            else if(parseInt(dureeElement.textContent)==60){
+                dureeElement.style.color="grey";
+                // remplace les éléments de la colonne mot de passe généré parle mot "expiré"
+                letpwd=document.getElementsByClassName("pwd");
+                
+            }
+        });
+    }
+}
+
+
 
 var minuscule = "abcdefghijklmnopqrstuvwxyz";
 var majuscule = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -47,7 +69,7 @@ function generer(){
     var duree = document.createElement('td');
     
     // b. Utilisez la méthode « classList » afin d’ajouter un attribut « class » à l’élément créé.
-    duree.classList.add('maClasse');
+    duree.classList.add('duree');
     
     // c. Initialisez la valeur du champ duree à 0.
     duree.textContent = "0";
@@ -102,39 +124,26 @@ function generer(){
             monTableau.appendChild(newLine);
   
         }
-        password="" // A NE PAS OUBLIER 
+        password=""; // A NE PAS OUBLIER 
     } // Fin de la boucle while permettant de regénérer un mot de passe si un caractère souhaité n'est pas présent
     verif = 1;
+    setInterval(incrementerDuree, 1000);
+
 }
 
 function contient_carspecial(str) {
     const specialChars = /[%!&*^()#$:]/;
     return specialChars.test(str);
-  }
-  function contient_minuscule(str) {
+}
+function contient_minuscule(str) {
     const specialChars = /[abcdefghijklmnopqrstuvwxyz]/;
     return specialChars.test(str);
-  }
-  function contient_majuscule(str) {
+}
+function contient_majuscule(str) {
     const specialChars = /[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/;
     return specialChars.test(str);
-  }
-  function contient_chiffre(str) {
+}
+function contient_chiffre(str) {
     const specialChars = /[0123456789]/;
     return specialChars.test(str);
-  }
- 
-
-  functionincrementerDuree() 
-  {
-    letdurees=document.getElementsByClassName("duree")
-    if(durees.length!=0) 
-        {Array.prototype.forEach.call(durees, function(dureeElement) 
-            {
-                letvaleur=parseInt(dureeElement.textContent);dureeElement.textContent=valeur+1;
-            });
-        }
-        
-    setInterval(incrementerDuree, 1000);
-    }
-
+}
