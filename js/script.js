@@ -31,6 +31,17 @@ function bienvenu(){
 //     monTableau.appendChild(newLine);
     
 // }
+
+//création d'un tableau vide 
+var mesPWDs = [];
+
+function pushPwd(pwd){
+    mesPWDs.push(pwd);
+    //La taille du tableau est modifiée dynamiquement avec chaque ajout d'élément.
+    
+    
+}
+
 function incrementerDuree() 
 {
 let durees=document.getElementsByClassName("duree")
@@ -214,9 +225,4 @@ class PWD {
     }
 }
 
-//création d'un tableau vide 
-var mesPWDs = [];
 
-function pushPwd(pwd){
-    mesPWDs.push(pwd);
-}
