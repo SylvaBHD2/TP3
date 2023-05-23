@@ -47,6 +47,7 @@ if(durees.length!=0)
                 // remplace les éléments de la colonne mot de passe généré parle mot "expiré"
                 letpwd=document.getElementsByClassName("pwd");
                 
+                
             }
         });
     }
@@ -127,7 +128,7 @@ function generer(){
         password=""; // A NE PAS OUBLIER 
     } // Fin de la boucle while permettant de regénérer un mot de passe si un caractère souhaité n'est pas présent
     verif = 1;
-    setInterval(incrementerDuree, 1000);
+    
 
 }
 
@@ -147,3 +148,5 @@ function contient_chiffre(str) {
     const specialChars = /[0123456789]/;
     return specialChars.test(str);
 }
+
+setInterval(incrementerDuree, 1000);
