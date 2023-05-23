@@ -42,8 +42,16 @@ function generer(){
     var min = 0;
     var maj = 0;
     var chif = 0;
-    var sym = 0;
-
+    var sym = 0; 
+    // a. Créez la variable duree dans laquelle sera stocké un nouvel élément td.
+    var duree = document.createElement('td');
+    
+    // b. Utilisez la méthode « classList » afin d’ajouter un attribut « class » à l’élément créé.
+    duree.classList.add('maClasse');
+    
+    // c. Initialisez la valeur du champ duree à 0.
+    duree.textContent = "0";
+    
     var monformulaire = document.forms.ajoutPWD;
     var password =""; // Variable contenant le mot de passe
     var listecar=""; // Liste contenant tous les caractères que le mot de passe peut avoir
@@ -87,8 +95,8 @@ function generer(){
             cat.textContent = document.getElementById("categorie").value;
             site.textContent = document.getElementById("site").value;
             pwd.textContent = password;
-
-            newLine.append(nbCarac, DateG, cat, site, pwd);
+            
+            newLine.append(nbCarac, DateG, cat, site, pwd, duree);
 
             var monTableau = document.getElementById("montab");
             monTableau.appendChild(newLine);
