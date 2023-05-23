@@ -128,6 +128,14 @@ function generer(){
     } // Fin de la boucle while permettant de regénérer un mot de passe si un caractère souhaité n'est pas présent
     verif = 1;
     document.ajoutPWD.reset();
+    
+    var nbCarac = document.getElementById("nombrecar").value;
+    var DateG = document.getElementById("dateg").value;
+    var cat = document.getElementById("categorie").value;
+    var site = document.getElementById("site").value;
+    var pwd = password;
+
+
 }
 
 function contient_carspecial(str) {
