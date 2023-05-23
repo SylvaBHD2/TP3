@@ -45,8 +45,7 @@ if(durees.length!=0)
             else if(parseInt(dureeElement.textContent)==60){
                 dureeElement.style.color="grey";
                 // remplace les éléments de la colonne mot de passe généré parle mot "expiré"
-                letpwd=document.getElementsByClassName("pwd");
-                
+                dureeElement.parentNode.childNodes[4].textContent="Expiré";
                 
             }
         });
