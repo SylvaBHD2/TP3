@@ -173,3 +173,42 @@ function supprimer() {
         table.shift();
 }
 }
+
+function PwdSaisi(pwd){   
+    var monformulaire = document.forms.ajoutPWD;
+    // Créer et retourner l'objet littéral
+    nbCarac= document.getElementById("nombrecar").value;
+    DateCreation = document.getElementById("dateg").value;
+    categorie = document.getElementById("categorie").value;
+    site = document.getElementById("site").value;
+    const NvPWD = new PWD(nbCarac, DateCreation, categorie, site, pwd)
+    NvPWD.printPwd();
+    return NvPWD;
+}     
+
+//création d'une classe PWD
+
+class PWD {
+    constructor(nombre, date, categorie, site, mdp) {
+      this.nombre = nombre;
+      this.date = date;
+      this.categorie = categorie;
+      this.site = site;
+      this.mdp = mdp;
+    }
+
+  printPwd() { 
+    console.log("Nombre de caractères " + this.nombre);
+    console.log("Date de création " + this.date);
+    console.log("Catégorie " + this.categorie);
+    console.log("Site " + this.site);
+    console.log("Mot de passe " + this.mdp);
+    }
+}
+
+//création d'un tableau vide 
+var mesPWDs = [];
+
+function pushPwd(pwd){
+    mesPWDs.push(pwd);
+}
