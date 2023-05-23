@@ -154,14 +154,14 @@ setInterval(incrementerDuree, 1000);
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#addPWD').addEventListener('submit',function(e){
         //vérifie si au moins une case du formulaire est cochée
-        if(document.querySelector('#minuscule').checked || document.querySelector('#majuscule').checked || document.querySelector('#chiffre').checked || document.querySelector('#symbole').checked){
-            alert("Veuillez sélectionner au moins un critère");
+        if((document.getElementById("minuscule").checked == false) && (document.getElementById("majuscule").checked == false) && (document.getElementById("chiffre").checked == false) && (document.getElementById("symbole").checked == false)){
+        alert("Veuillez sélectionner au moins un critère");
             e.preventDefault();
         }
         else{
             generer();
         }
-        
+
     });
 });
     
