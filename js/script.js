@@ -128,8 +128,6 @@ function generer(){
     } // Fin de la boucle while permettant de regénérer un mot de passe si un caractère souhaité n'est pas présent
     verif = 1;
     document.ajoutPWD.reset();
-
-
 }
 
 function contient_carspecial(str) {
@@ -163,4 +161,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-    
+
+function supprimer() {
+    if (confirm("Confirmez-vous la suppression de tous les mots de passe générés ?"))
+    {
+        document.ajoutPWD.submit();
+        //supprime toutes les lignes du tableau, sauf la première
+        var table = document.getElementById("montab");
+        var rowCount = table.rows.length;
+        for (var i = rowCount - 1; i > 0; i--) {
+          table.deleteRow(i);
+        }
+    } 
+}
