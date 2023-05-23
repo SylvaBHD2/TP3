@@ -149,7 +149,8 @@ function contient_chiffre(str) {
 
 setInterval(incrementerDuree, 1000);
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() 
+{
     document.querySelector('#addPWD').addEventListener('submit',function(e){
         //vérifie si au moins une case du formulaire est cochée
         if((document.getElementById("minuscule").checked == false) && (document.getElementById("majuscule").checked == false) && (document.getElementById("chiffre").checked == false) && (document.getElementById("symbole").checked == false)){
@@ -169,8 +170,6 @@ function supprimer() {
         //supprime toutes les lignes du tableau, sauf la première
         var table = document.getElementById("montab");
         var rowCount = table.rows.length;
-        for (var i = rowCount - 1; i > 0; i--) {
-          table.deleteRow(i);
-        }
-    } 
+        table.shift();
+}
 }
